@@ -12,7 +12,7 @@ export const GameInstructions = () => {
                     By clicking the start button, all cards will be shown for 3 seconds. Memorize the pairs and find them!
                 </p>
                 <p className={"font-normal text-xl text-center"}>
-                    You`ll have to click on each card to see the picture behind it, then click on another card to match them. Once you found a pair, you`ll get 1 point. Find all pairs to finish the game!
+                    You`ll have to click on each card to see the picture behind it, then click on another card to match them. Once you find a pair, they will disappear. Find all pairs to finish the game!
                 </p>
             </div>
         </div>
