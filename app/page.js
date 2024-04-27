@@ -1,11 +1,11 @@
 import {Title} from "@/components/Title";
-import {CardsContainer} from "@/components/CardsContainer";
+import {Body} from "@/components/Body";
 
 export default function Home() {
   return (
-      <main className={"font-caveat px-4"}>
+      <main className={"font-caveat px-4 backdrop-blur-sm"}>
           <Title/>
-          <CardsContainer/>
+          <Body/>
       </main>
   );
 }

@@ -1,15 +1,56 @@
-import Image from "next/image";
+import {Card} from "@/components/Card";
+
+let characters = [
+    "/icons/6.jpg",
+    "/icons/7.jpg",
+    "/icons/8.jpg",
+    "/icons/9.jpg",
+    "/icons/1.jpg",
+    "/icons/4.jpg",
+    "/icons/5.jpg",
+    "/icons/2.jpg",
+    "/icons/3.jpg",
+    "/icons/10.jpg",
+    "/icons/11.jpg",
+    "/icons/12.jpg",
+    "/icons/13.jpg",
+    "/icons/14.jpg",
+    "/icons/15.jpg",
+    "/icons/16.jpg",
+    "/icons/17.jpg",
+    "/icons/16.jpg",
+    "/icons/17.jpg",
+    "/icons/18.jpg",
+    "/icons/18.jpg",
+    "/icons/10.jpg",
+    "/icons/11.jpg",
+    "/icons/12.jpg",
+    "/icons/13.jpg",
+    "/icons/14.jpg",
+    "/icons/1.jpg",
+    "/icons/2.jpg",
+    "/icons/3.jpg",
+    "/icons/4.jpg",
+    "/icons/5.jpg",
+    "/icons/6.jpg",
+    "/icons/7.jpg",
+    "/icons/8.jpg",
+    "/icons/9.jpg",
+    "/icons/15.jpg",
+]
 
 export const CardsContainer = () => {
 
     return (
-        <section className={"w-5/6 mx-auto bg-[#ffffffBA] backdrop-blur select-none p-4 mt-10 rounded-lg"}>
-            <div className={"flex flex-col justify-center items-center py-24"}>
-                <Image src={"/icons/naruto-icon.png"} width={577} height={433} alt={"icon"} className={"w-44 h-44"}/>
-                <h5 className={"font-medium text-3xl mt-4"}>
-                    Click the Start button above to begin
-                </h5>
-            </div>
-        </section>
+        <div className={"h-[27rem] w-full flex flex-wrap justify-center items-center"}>
+            {
+                characters.map((item, i) => (
+                    <Card
+                        key={i}
+                        imgUrl={item}
+                    />
+                ))
+            }
+        </div>
     )
 }
