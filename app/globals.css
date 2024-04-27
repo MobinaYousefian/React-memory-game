@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'caveat';
+    src: url("../public/font/Caveat-VariableFont_wght.woff2");
+}
+
+.GameInstructions {
+    transform: translate3d(0px, -2rem, 0px);
+}
+
+.background-color-gradiant {
+    background: linear-gradient(to bottom right, rgba(243, 119, 45, 0.78), rgba(252, 87, 18, 0.73));
+    color: #a8610b;
+}

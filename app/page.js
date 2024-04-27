@@ -1,7 +1,9 @@
+import {Title} from "@/components/Title";
+
 export default function Home() {
   return (
-    <main>
-      hello
-    </main>
+      <main className={"font-caveat"}>
+          <Title/>
+      </main>
   );
 }

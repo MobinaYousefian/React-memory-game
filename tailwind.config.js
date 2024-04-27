@@ -6,7 +6,19 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily : {
+        'caveat' : ["caveat", "sans-serif"],
+      },
+      animation: {
+        dropDown: '0.3s cubic-bezier(0.4,0,0,1.5) 0s 1 normal forwards running dropDown',
+      },
+      keyframes: {
+        dropDown: {
+          '100%': {  transform: 'translateZ(0px)' },
+        }
+      },
+    },
   },
   plugins: [],
 };

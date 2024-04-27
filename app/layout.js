@@ -1,4 +1,6 @@
 import "./globals.css";
+import ReduxProvider from "@/redux/ReduxProvider";
+import dynamic from 'next/dynamic'
 
 export const metadata = {
   title: "Naruto memory game",
@@ -6,11 +8,18 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+    const DynamicModals = dynamic(() => import('../components/Modals'), {
+        ssr : false,
+    })
+
   return (
-    <html lang="en">
-      <body>
-      {children}
-      </body>
-    </html>
+    <ReduxProvider>
+        <html lang="en">
+        <body className={"px-4 backdrop-blur-sm bg-cover bg-no-repeat bg-[url('/icons/background.jpg')] h-[100vh]"}>
+        {children}
+        <DynamicModals/>
+        </body>
+        </html>
+    </ReduxProvider>
   );
 }
