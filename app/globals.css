@@ -11,7 +11,43 @@
     transform: translate3d(0px, -2rem, 0px);
 }
 
+.cardsContainer {
+    perspective: 800px;
+    width: 10%;
+    height: 6.4rem;
+    padding: 0.25rem;
+}
+
+.card {
+    transition: transform 500ms;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card__face--front,
+.card__face--back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    cursor: pointer;
+}
+
+.card__face--back {
+    transform: rotateY(180deg);
+}
+
+/*.cardsContainer:hover .card {*/
+/*    transform: rotateY(180deg);*/
+/*}*/
+
+.is-flipped {
+    transform: rotateY(180deg);
+}
+
+
 .background-color-gradiant {
     background: linear-gradient(to bottom right, rgba(243, 119, 45, 0.78), rgba(252, 87, 18, 0.68));
-    color: #a8610b;
+    color: #dedede;
 }

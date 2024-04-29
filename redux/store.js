@@ -1,10 +1,10 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import {instructionsReducer} from "@/redux/features/instructionsSlice";
-import {startReducer} from "@/redux/features/startSlice";
+import {gameReducer} from "@/redux/features/gameSlice";
 
 const rootReducer = combineReducers({
     instructions : instructionsReducer,
-    start : startReducer
+    game : gameReducer
 });
 
 export const store = configureStore({

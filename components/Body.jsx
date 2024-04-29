@@ -4,10 +4,10 @@ import {CardsContainer} from "@/components/CardsContainer";
 import {useSelector} from "react-redux";
 
 export const Body = () => {
-    const {isStarted} = useSelector(state => state.start);
+    const {isStarted, characters} = useSelector(state => state.game);
 
     return (
-        <section className={"w-5/6 mx-auto bg-[#ffffffBA] backdrop-blur select-none p-4 mt-10 rounded-lg"}>
+        <section className={"w-5/6 mx-auto bg-[#ffffffBA] backdrop-blur p-4 mt-10 rounded-lg"}>
             {
                 isStarted === false ?
                     <div className={"flex flex-col justify-center items-center py-24"}>
@@ -17,7 +17,9 @@ export const Body = () => {
                         </h5>
                     </div>
                     :
-                    <CardsContainer/>
+                    <CardsContainer
+                        characters={characters}
+                    />
             }
         </section>
     )
