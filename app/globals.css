@@ -42,8 +42,12 @@
 /*    transform: rotateY(180deg);*/
 /*}*/
 
-.is-flipped {
+.cardsContainer.isFlipped {
     transform: rotateY(180deg);
+}
+
+.isFound {
+    display: none;
 }
 
 

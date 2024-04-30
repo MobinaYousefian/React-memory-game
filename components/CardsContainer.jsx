@@ -11,6 +11,7 @@ export const CardsContainer = ({characters}) => {
                         imgUrl={item.imgUrl}
                         name={item.name}
                         index={index}
+                        characters={characters}
                     />
                 ))
             }
