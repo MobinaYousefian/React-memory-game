@@ -7,6 +7,7 @@ export const gameSlice = createSlice({
         characters : [],
         openCards : [],
         foundPairs : {},
+        isFinished : false,
     },
     reducers : {
         startGame : (state) => {
@@ -18,6 +19,7 @@ export const gameSlice = createSlice({
             state.characters = [];
             state.openCards = [];
             state.foundPairs = {};
+            state.isFinished = false;
         },
 
         setCharacters : (state, action) => {
@@ -35,8 +37,12 @@ export const gameSlice = createSlice({
         setFoundPairs : (state, action) => {
             state.foundPairs[action.payload] = true;
         },
+
+        setIsFinished : (state) => {
+            state.isFinished = true;
+        }
     }
 });
 
-export const {endGame, startGame, setCharacters, setOpenCards, clearOpenCards, setFoundPairs} = gameSlice.actions;
+export const {endGame, startGame, setCharacters, setOpenCards, clearOpenCards, setFoundPairs, setIsFinished} = gameSlice.actions;
 export const gameReducer = gameSlice.reducer;

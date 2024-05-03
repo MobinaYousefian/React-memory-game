@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {clearOpenCards, setFoundPairs, setOpenCards} from "@/redux/features/gameSlice";
 import {clsx} from "clsx";
 import {useEffect, useRef, useState} from "react";
+import {FinishedGame} from "@/components/FinishedGame";
 
 export const Card = ({imgUrl, index, name,characters}) => {
     const {openCards, foundPairs} = useSelector(state => state.game);
@@ -50,22 +51,21 @@ export const Card = ({imgUrl, index, name,characters}) => {
         }
         setIsFlipped(openCards.includes(index));
     };
-    console.log(isFlipped)
 
     const handleClickCard = () => {
         !isFlipped && onClick();
     };
 
     return (
-       <div onClick={handleClickCard} className={clsx(isFlipped && "isFlipped", foundPairs[name] ? "isFound" : "", "cardsContainer")}>
-           <div className={clsx("card")}>
-               <div className={"card__face--front"}>
-                   <Image src={"/icons/Question-mark256.png"} width={256} height={256} alt={"icon"} className={"rounded w-[5.8rem] h-[5.8rem]"}/>
-               </div>
-               <div className={"card__face--back"}>
-                   <Image src={imgUrl} width={256} height={256} alt={imgUrl.split("/")[2]} className={"rounded w-[5.8rem] h-[5.8rem]"}/>
-               </div>
-           </div>
-       </div>
+        <div onClick={handleClickCard} className={clsx(isFlipped && "isFlipped", foundPairs[name] ? "isFound" : "", "cardsContainer")}>
+            <div className={clsx("card")}>
+                <div className={"card__face--front"}>
+                    <Image src={"/icons/Question-mark256.png"} width={256} height={256} alt={"icon"} className={"rounded w-[5.8rem] h-[5.8rem]"}/>
+                </div>
+                <div className={"card__face--back"}>
+                    <Image src={imgUrl} width={256} height={256} alt={imgUrl.split("/")[2]} className={"rounded w-[5.8rem] h-[5.8rem]"}/>
+                </div>
+            </div>
+        </div>
     )
 }

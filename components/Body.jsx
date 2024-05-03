@@ -1,11 +1,24 @@
 'use client'
 import Image from "next/image";
 import {CardsContainer} from "@/components/CardsContainer";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {FinishedGame} from "@/components/FinishedGame";
+import {useEffect} from "react";
+import {setIsFinished} from "@/redux/features/gameSlice";
 
 export const Body = () => {
-    const {isStarted, characters} = useSelector(state => state.game);
+    const {isStarted, characters, foundPairs, isFinished} = useSelector(state => state.game);
+    const dispatch = useDispatch();
 
+    useEffect( () => {
+        if (characters.length > 1) {
+            if ((Object.keys(foundPairs).length) * 2 === characters.length) {
+                dispatch(setIsFinished())
+            }
+        }
+    }, [foundPairs])
+
+    if (isFinished === true) return <FinishedGame/>
     return (
         <section className={"w-5/6 mx-auto bg-[#ffffffBA] backdrop-blur p-4 mt-10 rounded-lg"}>
             {
