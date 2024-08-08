@@ -1,13 +1,12 @@
 'use client'
 import Image from "next/image";
 import {useDispatch, useSelector} from "react-redux";
-import {clearOpenCards, setFoundPairs, setOpenCards} from "@/redux/features/gameSlice";
+import {clearOpenCards, setFoundPairs, setIsFinished, setOpenCards} from "@/redux/features/gameSlice";
 import {clsx} from "clsx";
 import {useEffect, useRef, useState} from "react";
-import {FinishedGame} from "@/components/FinishedGame";
 
-export const Card = ({imgUrl, index, name,characters}) => {
-    const {openCards, foundPairs} = useSelector(state => state.game);
+export const Card = ({imgUrl, index, name}) => {
+    const {openCards, foundPairs, characters} = useSelector(state => state.game);
     const dispatch = useDispatch();
     const timeOut = useRef(null);
     const [isFlipped, setIsFlipped] = useState(false);
@@ -35,10 +34,14 @@ export const Card = ({imgUrl, index, name,characters}) => {
             timeout = setTimeout(handleCheckPairs, 500);
         }
 
+        if ((Object.keys(foundPairs).length) * 2 === characters.length) {
+            dispatch(setIsFinished())
+        }
+
         return () => {
             clearTimeout(timeout);
         };
-    }, [openCards]);
+    }, [openCards, foundPairs]);
 
 
     /* function to handle the clicks on cards */
