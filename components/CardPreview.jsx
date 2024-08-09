@@ -1,5 +1,5 @@
 "use client"
-import "./previewAnimation.css"
+import "../styles/previewAnimation.css"
 import Image from "next/image";
 import {useEffect} from "react";
 import {useDispatch} from "react-redux";

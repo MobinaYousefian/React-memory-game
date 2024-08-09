@@ -1,4 +1,4 @@
-import "./fireWorks.css"
+import "../styles/fireWorks.css"
 
 export const FinishedGame = () => {
 

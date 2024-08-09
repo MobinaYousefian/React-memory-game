@@ -1,5 +1,4 @@
 'use client'
-import "./foundPairAnimation.css"
 import Image from "next/image";
 import {useDispatch, useSelector} from "react-redux";
 import {clearOpenCards, setFoundPairs, setIsFinished, setOpenCards} from "@/redux/features/gameSlice";
@@ -11,7 +10,6 @@ export const Card = ({imgUrl, index, name}) => {
     const dispatch = useDispatch();
     const timeOut = useRef(null);
     const cardRef = useRef(null);
-    const spanRef = useRef(null);
 
     useEffect(() => {
         let checkTimeout = null;
@@ -62,7 +60,6 @@ export const Card = ({imgUrl, index, name}) => {
                 <div className={"card__face--front"}>
                     <Image src={"/icons/Question-mark256.png"} width={256} height={256} alt={"icon"} className={"rounded w-[5.8rem] h-[5.8rem]"}/>
                 </div>
-                <span ref={spanRef}/>
                 <div className={"card__face--back"}>
                     <Image src={imgUrl} width={256} height={256} alt={imgUrl.split("/")[2]} className={"rounded w-[5.8rem] h-[5.8rem]"}/>
                 </div>
