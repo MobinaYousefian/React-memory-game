@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 import {FinishedGame} from "@/components/FinishedGame";
 
 export const Body = () => {
-    const {isStarted, characters, isFinished} = useSelector(state => state.game);
+    const {isStarted, characters, isFinished, isPreview} = useSelector(state => state.game);
 
     return (
         <section className={"w-5/6 mx-auto bg-[#ffffffBA] backdrop-blur p-4 mt-10 rounded-lg"}>
@@ -20,7 +20,7 @@ export const Body = () => {
                     : isFinished === true ?
                         <FinishedGame/>
                     :
-                        <CardsContainer characters={characters}/>
+                        <CardsContainer characters={characters} isPreview={isPreview}/>
             }
         </section>
     )

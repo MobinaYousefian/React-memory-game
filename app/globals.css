@@ -7,15 +7,21 @@
     src: url("../public/font/Caveat-VariableFont_wght.woff2");
 }
 
+.background-color-gradiant {
+    background: linear-gradient(to bottom right, rgba(243, 119, 45, 0.78), rgba(252, 87, 18, 0.68));
+    color: #dedede;
+}
+
 .GameInstructions {
     transform: translate3d(0px, -2rem, 0px);
 }
 
 .cardsContainer {
-    perspective: 800px;
+    perspective: 1000px;
     width: 10%;
     height: 6.4rem;
     padding: 0.25rem;
+    cursor: pointer;
 }
 
 .card {
@@ -29,29 +35,18 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    cursor: pointer;
+    -webkit-backface-visibility: hidden;
 }
 
 .card__face--back {
     transform: rotateY(180deg);
 }
 
-/*.cardsContainer:hover .card {*/
-/*    transform: rotateY(180deg);*/
-/*}*/
-
-.cardsContainer.isFlipped {
+.card.isFlipped {
     transform: rotateY(180deg);
 }
 
 .isFound {
-    display: none;
-}
-
-
-.background-color-gradiant {
-    background: linear-gradient(to bottom right, rgba(243, 119, 45, 0.78), rgba(252, 87, 18, 0.68));
-    color: #dedede;
+    visibility: hidden;
 }

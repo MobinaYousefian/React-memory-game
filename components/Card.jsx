@@ -1,37 +1,22 @@
 'use client'
+import "./foundPairAnimation.css"
 import Image from "next/image";
 import {useDispatch, useSelector} from "react-redux";
 import {clearOpenCards, setFoundPairs, setIsFinished, setOpenCards} from "@/redux/features/gameSlice";
 import {clsx} from "clsx";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useRef} from "react";
 
 export const Card = ({imgUrl, index, name}) => {
     const {openCards, foundPairs, characters} = useSelector(state => state.game);
     const dispatch = useDispatch();
     const timeOut = useRef(null);
-    const [isFlipped, setIsFlipped] = useState(false);
-    // const [isFound, setIsFound] = useState(false);
-
-
-    /* function to check pairs */
-    const handleCheckPairs = () => {
-        const [first, second] = openCards;
-        if (characters[first].name === characters[second].name) {
-            dispatch(setFoundPairs(characters[first].name));
-            dispatch(clearOpenCards());
-            return;
-        }
-
-        //timeOut to auto flip the card when 2 cards aren`t a pair
-        timeOut.current = setTimeout(() => {
-            dispatch(clearOpenCards());
-        }, 500);
-    }
+    const cardRef = useRef(null);
+    const spanRef = useRef(null);
 
     useEffect(() => {
-        let timeout = null;
+        let checkTimeout = null;
         if (openCards.length === 2) {
-            timeout = setTimeout(handleCheckPairs, 500);
+            checkTimeout = setTimeout(handleCheckPairs, 500);
         }
 
         if ((Object.keys(foundPairs).length) * 2 === characters.length) {
@@ -39,32 +24,45 @@ export const Card = ({imgUrl, index, name}) => {
         }
 
         return () => {
-            clearTimeout(timeout);
+            clearTimeout(checkTimeout);
         };
     }, [openCards, foundPairs]);
 
 
-    /* function to handle the clicks on cards */
-    const onClick = () => {
-        if (openCards.length === 1) {
-            dispatch(setOpenCards(index));
-        }else {
-            clearTimeout(timeOut.current); //if two cards were already clicked, flips them back
-            dispatch(setOpenCards(index))
+    /* function to check pairs */
+    const handleCheckPairs = () => {
+        const [first, second] = openCards;
+        if (characters[first].name === characters[second].name) {
+            timeOut.current = setTimeout(() => {
+                dispatch(setFoundPairs(characters[first].name));
+                dispatch(clearOpenCards());
+            }, 500)
         }
-        setIsFlipped(openCards.includes(index));
-    };
 
+        //timeOut to auto flip the card when 2 cards aren`t a pair
+        timeOut.current = setTimeout(() => {
+            dispatch(clearOpenCards());
+            if (cardRef.current) {
+                cardRef.current.classList.remove("isFlipped");
+            }
+        }, 500);
+    }
+
+    /* function to handle the clicks on cards */
     const handleClickCard = () => {
-        !isFlipped && onClick();
+        if (!openCards.includes(index) && openCards.length < 2) {
+            cardRef.current.classList.toggle("isFlipped");
+            dispatch(setOpenCards(index));
+        }
     };
 
     return (
-        <div onClick={handleClickCard} className={clsx(isFlipped && "isFlipped", foundPairs[name] ? "isFound" : "", "cardsContainer")}>
-            <div className={clsx("card")}>
+        <div className={clsx("cardsContainer", foundPairs[name] && "isFound")}>
+            <div ref={cardRef} onClick={handleClickCard} className={"card"}>
                 <div className={"card__face--front"}>
                     <Image src={"/icons/Question-mark256.png"} width={256} height={256} alt={"icon"} className={"rounded w-[5.8rem] h-[5.8rem]"}/>
                 </div>
+                <span ref={spanRef}/>
                 <div className={"card__face--back"}>
                     <Image src={imgUrl} width={256} height={256} alt={imgUrl.split("/")[2]} className={"rounded w-[5.8rem] h-[5.8rem]"}/>
                 </div>

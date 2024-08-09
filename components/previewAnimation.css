@@ -1,0 +1,50 @@
+/* count down animation */
+.countdown-pulse3 {
+    opacity: 0;
+    animation: countdown3 1s cubic-bezier(0, 0, 0.2, 1) normal;
+}
+@keyframes countdown3 {
+    from{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1.6);
+        opacity: 1;
+    }
+}
+
+.countdown-pulse2 {
+    opacity: 0;
+    animation: countdown2 1s cubic-bezier(0, 0, 0.2, 1) normal;
+    animation-delay: 1s;
+}
+@keyframes countdown2 {
+    from{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1.6);
+        opacity: 1;
+    }
+}
+
+.countdown-pulse1 {
+    opacity: 0;
+    animation: countdown1 1s cubic-bezier(0, 0, 0.2, 1) normal;
+    animation-delay: 2s;
+}
+@keyframes countdown1 {
+    from{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1.6);
+        opacity: 1;
+    }
+}
