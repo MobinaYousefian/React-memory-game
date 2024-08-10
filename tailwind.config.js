@@ -11,10 +11,10 @@ module.exports = {
         'caveat' : ["caveat", "sans-serif"],
       },
       animation: {
-        dropDown: '0.3s cubic-bezier(0.4,0,0,1.5) 0s 1 normal forwards running dropDown',
+        instructionMenu: '0.3s cubic-bezier(0.4,0,0,1) 0s 1 normal forwards running instructionMenu',
       },
       keyframes: {
-        dropDown: {
+        instructionMenu: {
           '100%': {  transform: 'translateZ(0px)' },
         }
       },

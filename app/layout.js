@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <ReduxProvider>
         <html lang="en">
-        <body className={"backdrop-blur-sm bg-cover bg-no-repeat bg-[url('/icons/background.jpg')] h-[100vh]"}>
+        <body className={"overflow-y-auto bg-cover bg-no-repeat bg-[url('/icons/background.jpg')]"}>
         {children}
         <DynamicModals/>
         </body>
