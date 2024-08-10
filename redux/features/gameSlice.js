@@ -3,6 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 export const gameSlice = createSlice({
     name : "start",
     initialState : {
+        timer : 0,
         isStarted : false,
         isPreview : false,
         characters : [],
@@ -12,6 +13,10 @@ export const gameSlice = createSlice({
         isFinished : false,
     },
     reducers : {
+        setTimer : (state, action) => {
+          state.gameMode += action.payload
+        },
+
         startGame : (state) => {
             state.isStarted = true;
             state.isPreview = true;
@@ -51,5 +56,5 @@ export const gameSlice = createSlice({
     }
 });
 
-export const {endGame, startGame, setIsPreview,setCharacters, setOpenCards, clearOpenCards, setFoundPairs, setIsFinished} = gameSlice.actions;
+export const {setTimer, endGame, startGame, setIsPreview,setCharacters, setOpenCards, clearOpenCards, setFoundPairs, setIsFinished} = gameSlice.actions;
 export const gameReducer = gameSlice.reducer;
