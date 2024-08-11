@@ -7,6 +7,12 @@
     src: url("../public/font/Caveat-VariableFont_wght.woff2");
 }
 
+@media (min-width: 1024px) {
+    body {
+        overflow: hidden !important;
+    }
+}
+
 .background-color-gradiant {
     background: linear-gradient(to bottom right, rgba(243, 119, 45, 0.78), rgba(252, 87, 18, 0.68));
     color: #dedede;
