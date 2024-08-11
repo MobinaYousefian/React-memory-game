@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import {StartBtn} from "@/components/StartBtn";
+import {GeneralBtn} from "@/components/GeneralBtn";
 import {setCharacters, setTimer, startGame} from "@/redux/features/gameSlice";
 import {useDispatch} from "react-redux";
 
@@ -80,15 +80,19 @@ export const NotStarted = () => {
                 Choose a game mode to play
             </h5>
             <div className={"flex flex-col items-center md:flex-row"}>
-                <StartBtn
-                    buttonText={"Standard"}
+                <GeneralBtn
+                    buttonText={"Standard -->"}
                     description={"18 pairs • No timer"}
                     fn={handleStartStandard}
+                    bg={"bg-[#CE410AAF]"}
+                    bgHoverActive={"hover:bg-[#C2410CD3] active:bg-[#F3772DC6]"}
                 />
-                <StartBtn
-                    buttonText={"Challenge Mode"}
+                <GeneralBtn
+                    buttonText={"Challenge Mode -->"}
                     description={"18 pairs • 1 min timer"}
                     fn={handleStartChallenge}
+                    bg={"bg-[#CE410AAF]"}
+                    bgHoverActive={"hover:bg-[#C2410CD3] active:bg-[#F3772DC6]"}
                 />
             </div>
         </div>
