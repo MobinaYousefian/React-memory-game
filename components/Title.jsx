@@ -1,13 +1,12 @@
 'use client'
 import {useDispatch, useSelector} from "react-redux";
 import {triggerInstructions} from "@/redux/features/instructionsSlice";
-import {clsx} from "clsx";
 import {GeneralBtn} from "@/components/GeneralBtn";
 import {endGame} from "@/redux/features/gameSlice";
 
 export const Title = () => {
     const dispatch = useDispatch();
-    const {isOpen} = useSelector(state => state.instructions);
+    // const {isOpen} = useSelector(state => state.instructions);
     const {isStarted} = useSelector(state => state.game);
 
     const handleTriggerInstructions = () => {
@@ -22,7 +21,7 @@ export const Title = () => {
                 </h1>
             </div>
             <div className={"flex flex-row-reverse items-baseline p-1"}>
-                <h4 onClick={handleTriggerInstructions} className={"active:bg-[#ffffffBA] cursor-pointer group duration-100 transition-all hover:bg-[#ffffffD3] px-3 sm:px-4 py-1 text-gray-800 font-bold text-2xl sm:text-3xl bg-[#ffffffC4] rounded-3xl"}>
+                <h4 onClick={handleTriggerInstructions} className={"drop-shadow-lg active:bg-[#ffffffBA] cursor-pointer group duration-100 transition-all hover:bg-[#ffffffD3] px-3 sm:px-4 py-1 text-gray-800 font-bold text-2xl sm:text-3xl bg-[#ffffffC4] rounded-3xl"}>
                     {/*<span className={clsx(isOpen === false ? "group-hover:-translate-x-0.5" : "group-hover:translate-x-0.5" ,"transition-all duration-100 mr-3 font-sans text-xl")}>{"<"}</span>*/}
                     Instructions
                 </h4>

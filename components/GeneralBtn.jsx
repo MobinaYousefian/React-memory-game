@@ -1,6 +1,6 @@
 export const GeneralBtn = ({buttonText, description, fn, bg, bgHoverActive}) => {
     return (
-        <div className={"cursor-pointer px-2 sm:p-3"}>
+        <div className={"cursor-pointer px-2 drop-shadow-lg"}>
             <button onClick={fn} className={`group rounded-3xl duration-100 transition-all px-4 md:px-8 py-2 text-white text-center ${bg} ${bgHoverActive}`}>
                 <span className={"font-bold text-xl sm:text-2xl"}>
                     {buttonText}
