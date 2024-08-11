@@ -28,6 +28,7 @@ export const gameSlice = createSlice({
             state.openCards = [];
             state.foundPairs = {};
             state.isFinished = false;
+            state.timer = 0;
         },
 
         setIsPreview : (state, action) => {

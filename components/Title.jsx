@@ -2,10 +2,13 @@
 import {useDispatch, useSelector} from "react-redux";
 import {triggerInstructions} from "@/redux/features/instructionsSlice";
 import {clsx} from "clsx";
+import {GeneralBtn} from "@/components/GeneralBtn";
+import {endGame} from "@/redux/features/gameSlice";
 
 export const Title = () => {
     const dispatch = useDispatch();
     const {isOpen} = useSelector(state => state.instructions);
+    const {isStarted} = useSelector(state => state.game);
 
     const handleTriggerInstructions = () => {
         dispatch(triggerInstructions());
@@ -23,6 +26,16 @@ export const Title = () => {
                     <span className={clsx(isOpen === false ? "group-hover:-translate-x-0.5" : "group-hover:translate-x-0.5" ,"transition-all duration-100 mr-3 font-sans text-xl")}>{"<"}</span>
                     Instructions
                 </h4>
+                {
+                    isStarted &&
+                    <GeneralBtn
+                        buttonText={"Back To Home"}
+                        description={""}
+                        fn={ () => dispatch(endGame()) }
+                        bg={"bg-[#0c0c0cD3]"}
+                        bgHoverActive={"hover:bg-[#0c0c0cFF] active:bg-[#262626FF]"}
+                    />
+                }
             </div>
         </div>
     )
