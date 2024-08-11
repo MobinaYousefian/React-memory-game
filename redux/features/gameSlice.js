@@ -14,7 +14,7 @@ export const gameSlice = createSlice({
     },
     reducers : {
         setTimer : (state, action) => {
-          state.gameMode += action.payload
+          state.timer += action.payload
         },
 
         startGame : (state) => {
