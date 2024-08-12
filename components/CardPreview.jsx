@@ -26,7 +26,7 @@ export const CardPreview = ({characters}) => {
             </div>
             {
                 characters.map((item, i) => (
-                    <div className={"p-1.5"} key={i}>
+                    <div className={"w-[11%] p-1.5"} key={i}>
                         <Image src={item.imgUrl} width={256} height={256} alt={item.imgUrl.split("/")[2]} className={"rounded w-[5.8rem] h-[5.8rem]"}/>
                     </div>
                 ))

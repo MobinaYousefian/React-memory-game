@@ -9,7 +9,7 @@ export const CardsContainer = ({characters, isPreview, timer}) => {
             {
                 (!isPreview && timer > 0) && <Timer/>
             }
-            <div className={"h-full w-11/12 mx-auto flex flex-wrap justify-center items-center"}>
+            <div className={"h-full w-full sm:w-11/12 mx-auto flex flex-wrap justify-center items-center"}>
                 {
                     isPreview ?
                         <CardPreview characters={characters}/>
