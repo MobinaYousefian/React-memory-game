@@ -21,18 +21,21 @@ export const Title = () => {
                 </h1>
             </div>
             <div className={clsx("flex flex-row-reverse items-baseline pt-1", isStarted && "justify-between w-full")}>
-                <h4 onClick={handleTriggerInstructions} className={"drop-shadow-lg active:bg-[#ffffffBA] cursor-pointer group duration-100 transition-all hover:bg-[#ffffffD3] px-3 sm:px-4 py-1 text-gray-800 font-bold text-2xl sm:text-3xl bg-[#ffffffC4] rounded-3xl"}>
-                    <span className={"group-hover:translate-x-0.5 transition-all duration-100 mr-1 font-sans text-xl"}>{"<"}</span>
-                    Instructions
-                </h4>
+                <GeneralBtn
+                    buttonText={"Instructions"}
+                    description={""}
+                    fn={handleTriggerInstructions}
+                    customCss={"text-gray-800 bg-[#ffffffC4]"}
+                    hoverActive={"hover:bg-[#ffffffD3] active:bg-[#ffffffBA]"}
+                />
                 {
                     isStarted &&
                     <GeneralBtn
-                        buttonText={"Go Home Ħ"}
+                        buttonText={"Go Home"}
                         description={""}
                         fn={ () => dispatch(endGame()) }
-                        bg={"bg-[#0c0c0cD3]"}
-                        bgHoverActive={"hover:bg-[#0c0c0cFF] active:bg-[#262626FF]"}
+                        customCss={"text-white bg-[#0c0c0cD3]"}
+                        hoverActive={"hover:bg-[#0c0c0cFF] active:bg-[#262626FF]"}
                     />
                 }
             </div>

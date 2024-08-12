@@ -85,8 +85,8 @@ export const NotStarted = () => {
                         buttonText={"Standard -->"}
                         description={"18 pairs • No timer"}
                         fn={handleStartStandard}
-                        bg={"bg-[#CE410AAF]"}
-                        bgHoverActive={"hover:bg-[#C2410CD3] active:bg-[#F3772DC6]"}
+                        customCss={"text-white bg-[#CE410AAF]"}
+                        hoverActive={"hover:bg-[#C2410CD3] active:bg-[#F3772DC6]"}
                     />
                 </div>
                 <div className={"py-2 px-1"}>
@@ -94,8 +94,8 @@ export const NotStarted = () => {
                         buttonText={"Challenge Mode -->"}
                         description={"18 pairs • 1 min timer"}
                         fn={handleStartChallenge}
-                        bg={"bg-[#CE410AAF]"}
-                        bgHoverActive={"hover:bg-[#C2410CD3] active:bg-[#F3772DC6]"}
+                        customCss={"text-white bg-[#CE410AAF]"}
+                        hoverActive={"hover:bg-[#C2410CD3] active:bg-[#F3772DC6]"}
                     />
                 </div>
             </div>
