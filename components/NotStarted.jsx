@@ -3,48 +3,41 @@ import Image from "next/image";
 import {GeneralBtn} from "@/components/GeneralBtn";
 import {setCharacters, setTimer, startGame} from "@/redux/features/gameSlice";
 import {useDispatch} from "react-redux";
+import {isMobileOnly} from "react-device-detect";
+
+const characters = [
+    {imgUrl : "/icons/6.jpg", name : "naruto"},
+    {imgUrl : "/icons/7.jpg", name : "hinata"},
+    {imgUrl : "/icons/8.jpg", name: "sarada"},
+    {imgUrl : "/icons/9.jpg", name: "sakura"},
+    {imgUrl : "/icons/1.jpg", name: "kakashi"},
+    {imgUrl : "/icons/4.jpg", name: "himavari"},
+    {imgUrl : "/icons/5.jpg", name: "sasuke"},
+    {imgUrl :"/icons/2.jpg", name: "kurama"},
+    {imgUrl : "/icons/3.jpg", name: "boruto"},
+    {imgUrl : "/icons/10.jpg", name: "kawaki"},
+    {imgUrl : "/icons/11.jpg", name: "gara"},
+    {imgUrl : "/icons/12.jpg", name: "jiraya"},
+    {imgUrl : "/icons/13.jpg", name: "itachi"},
+    {imgUrl : "/icons/15.jpg", name: "mitsoki"},
+    {imgUrl : "/icons/16.jpg", name: "minato"},
+    {imgUrl : "/icons/17.jpg", name: "mightGuy"},
+    {imgUrl : "/icons/18.jpg", name: "kushina"},
+    {imgUrl : "/icons/14.jpg", name: "orochimaru"},
+]
 
 export const NotStarted = () => {
     const dispatch = useDispatch();
 
-    let characters = [
-        {imgUrl : "/icons/6.jpg", name : "naruto"},
-        {imgUrl : "/icons/7.jpg", name : "hinata"},
-        {imgUrl : "/icons/8.jpg", name: "sarada"},
-        {imgUrl : "/icons/9.jpg", name: "sakura"},
-        {imgUrl : "/icons/1.jpg", name: "kakashi"},
-        {imgUrl : "/icons/4.jpg", name: "himavari"},
-        {imgUrl : "/icons/5.jpg", name: "sasuke"},
-        {imgUrl :"/icons/2.jpg", name: "kurama"},
-        {imgUrl : "/icons/3.jpg", name: "boruto"},
-        {imgUrl : "/icons/10.jpg", name: "kawaki"},
-        {imgUrl : "/icons/11.jpg", name: "gara"},
-        {imgUrl : "/icons/12.jpg", name: "jiraya"},
-        {imgUrl : "/icons/13.jpg", name: "itachi"},
-        {imgUrl : "/icons/14.jpg", name: "orochimaru"},
-        {imgUrl : "/icons/15.jpg", name: "mitsoki"},
-        {imgUrl : "/icons/16.jpg", name: "minato"},
-        {imgUrl : "/icons/17.jpg", name: "mightGuy"},
-        {imgUrl : "/icons/16.jpg", name: "minato"},
-        {imgUrl : "/icons/17.jpg", name: "mightGuy"},
-        {imgUrl : "/icons/18.jpg", name: "kushina"},
-        {imgUrl : "/icons/18.jpg", name: "kushina"},
-        {imgUrl : "/icons/10.jpg", name: "kawaki"},
-        {imgUrl : "/icons/11.jpg", name: "gara"},
-        {imgUrl : "/icons/12.jpg", name: "jiraya"},
-        {imgUrl : "/icons/13.jpg", name: "itachi"},
-        {imgUrl : "/icons/3.jpg", name: "boruto"},
-        {imgUrl : "/icons/4.jpg", name: "himavari"},
-        {imgUrl : "/icons/5.jpg", name: "sasuke"},
-        {imgUrl : "/icons/14.jpg", name: "orochimaru"},
-        {imgUrl : "/icons/1.jpg", name: "kakashi"},
-        {imgUrl :"/icons/2.jpg", name: "kurama"},
-        {imgUrl : "/icons/6.jpg", name : "naruto"},
-        {imgUrl : "/icons/7.jpg", name : "hinata"},
-        {imgUrl : "/icons/8.jpg", name: "sarada"},
-        {imgUrl : "/icons/9.jpg", name: "sakura"},
-        {imgUrl : "/icons/15.jpg", name: "mitsoki"},
-    ]
+    let charactersList = characters.concat(characters)
+    const mobileCharacters = characters.slice(0, 12);
+    const mobileCharactersList = mobileCharacters.concat(mobileCharacters);
+
+    let timer = 123000
+    if (isMobileOnly) {
+        charactersList = mobileCharactersList
+        timer = 59000
+    }
 
 
 // Fisher Yates Shuffle
@@ -64,12 +57,12 @@ export const NotStarted = () => {
     }
 
     const handleStartStandard = () => {
-        dispatch(setCharacters(shuffledChar(characters)));
+        dispatch(setCharacters(shuffledChar(charactersList)));
         dispatch(startGame());
     };
 
     const handleStartChallenge = () => {
-        dispatch(setTimer(60000));
+        dispatch(setTimer(timer));
         handleStartStandard();
     }
 

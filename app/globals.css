@@ -22,11 +22,18 @@
     transform: translate3d(2rem, 0px, 0px);
 }
 
+
 .cardsContainer {
     perspective: 1000px;
     width: 11%;
     height: 6.4rem;
     cursor: pointer;
+}
+
+@media (max-width: 760px) {
+    .cardsContainer {
+        width: 16%;
+    }
 }
 
 .card {

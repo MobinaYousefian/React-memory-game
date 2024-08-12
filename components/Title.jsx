@@ -14,7 +14,7 @@ export const Title = () => {
     };
 
     return (
-        <div className={"px-2 flex flex-col justify-between items-center md:items-center select-none md:flex-row"}>
+        <div className={"pb-4 px-2 flex flex-col justify-between items-center md:items-center select-none md:flex-row"}>
             <div className={clsx("p-2 text-center", isStarted && "hidden")}>
                 <h1 className={"px-5 py-2 font-bold text-3xl md:text-4xl text-gray-800 rounded-3xl bg-[#ffffffC4]"}>
                     Welcome to memory game Naruto!
