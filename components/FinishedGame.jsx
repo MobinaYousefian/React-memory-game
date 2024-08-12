@@ -8,12 +8,12 @@ export const FinishedGame = () => {
                 <div className={"before"}> </div>
                 <div className={"after"}> </div>
             </div>
-            <div className={"py-40 px-4 flex items-center justify-center flex-col"}>
+            <div className={"py-28 px-4 flex items-center justify-center text-center flex-col"}>
                 <p className={"text-gray-800 text-3xl"}>
-                    🎉 Congratulations! You have finished the game  ^_^ 🎉
+                    🎉 Congratulations! You Won  ^_^ 🎉
                 </p>
                 <p className={"text-gray-800 text-3xl mt-4 font-medium"}>
-                    You can play another round by clicking on Back to home button.
+                    You can play another round by clicking on Go Home button.
                 </p>
             </div>
         </>
