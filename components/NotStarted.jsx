@@ -28,15 +28,16 @@ const characters = [
 
 export const NotStarted = () => {
     const dispatch = useDispatch();
-
-    let charactersList = characters.concat(characters)
+    let charactersList = characters.concat(characters);
     const mobileCharacters = characters.slice(0, 12);
-    const mobileCharactersList = mobileCharacters.concat(mobileCharacters);
 
-    let timer = 120
+    let pairsNumber = "18";
+    let timer = 120;
+
     if (isMobileOnly) {
-        charactersList = mobileCharactersList
-        timer = 60
+        charactersList = mobileCharacters.concat(mobileCharacters);
+        timer = 60;
+        pairsNumber = "12";
     }
 
 
@@ -76,7 +77,7 @@ export const NotStarted = () => {
                 <div className={"py-2 px-1"}>
                     <GeneralBtn
                         buttonText={"Standard -->"}
-                        description={"18 pairs • No timer"}
+                        description={`${pairsNumber} pairs • No timer`}
                         fn={handleStartStandard}
                         customCss={"text-white bg-[#CE410AAF]"}
                         hoverActive={"hover:bg-[#C2410CD3] active:bg-[#F3772DC6]"}
@@ -85,7 +86,7 @@ export const NotStarted = () => {
                 <div className={"py-2 px-1"}>
                     <GeneralBtn
                         buttonText={"Challenge Mode -->"}
-                        description={"18 pairs • 1 min timer"}
+                        description={`${pairsNumber} pairs • 1 min timer`}
                         fn={handleStartChallenge}
                         customCss={"text-white bg-[#CE410AAF]"}
                         hoverActive={"hover:bg-[#C2410CD3] active:bg-[#F3772DC6]"}

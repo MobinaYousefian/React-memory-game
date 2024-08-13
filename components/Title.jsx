@@ -34,7 +34,7 @@ export const Title = () => {
                         buttonText={"Go Home"}
                         description={""}
                         fn={ () => dispatch(endGame()) }
-                        customCss={"text-white bg-[#0c0c0cD3]"}
+                        customCss={"text-white bg-[#282828D3]"}
                         hoverActive={"hover:bg-[#0c0c0cFF] active:bg-[#262626FF]"}
                     />
                 }
