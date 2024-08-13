@@ -14,7 +14,7 @@ export const Card = ({imgUrl, index, name}) => {
     useEffect(() => {
         let checkTimeout = null;
         if (openCards.length === 2) {
-            checkTimeout = setTimeout(handleCheckPairs, 500);
+            checkTimeout = setTimeout(handleCheckPairs, 300);
         }
 
         if ((Object.keys(foundPairs).length) * 2 === characters.length) {
@@ -34,7 +34,7 @@ export const Card = ({imgUrl, index, name}) => {
             timeOut.current = setTimeout(() => {
                 dispatch(setFoundPairs(characters[first].name));
                 dispatch(clearOpenCards());
-            }, 500)
+            }, 300)
         }
 
         //timeOut to auto flip the card when 2 cards aren`t a pair
@@ -43,12 +43,12 @@ export const Card = ({imgUrl, index, name}) => {
             if (cardRef.current) {
                 cardRef.current.classList.remove("isFlipped");
             }
-        }, 500);
+        }, 300);
     }
 
     /* function to handle the clicks on cards */
     const handleClickCard = () => {
-        if (!openCards.includes(index) && openCards.length < 2) {
+        if (openCards.length < 2 && !openCards.includes(index)) {
             cardRef.current.classList.toggle("isFlipped");
             dispatch(setOpenCards(index));
         }

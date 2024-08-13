@@ -33,10 +33,10 @@ export const NotStarted = () => {
     const mobileCharacters = characters.slice(0, 12);
     const mobileCharactersList = mobileCharacters.concat(mobileCharacters);
 
-    let timer = 123000
+    let timer = 120
     if (isMobileOnly) {
         charactersList = mobileCharactersList
-        timer = 59000
+        timer = 60
     }
 
 

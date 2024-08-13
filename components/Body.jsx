@@ -11,7 +11,7 @@ export const Body = () => {
     return (
         <>
             {
-                (!isPreview && timer > 0) &&
+                (timer > 0 && !isPreview && !isFinished) &&
                 <div className={"pb-2"}>
                     <Timer/>
                 </div>
