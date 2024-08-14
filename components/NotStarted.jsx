@@ -83,7 +83,7 @@ export const NotStarted = () => {
                         hoverActive={"hover:bg-[#C2410CD3] active:bg-[#F3772DC6]"}
                     />
                 </div>
-                <div className={"py-2 px-1"}>
+                <div className={"py-2 px-3"}>
                     <GeneralBtn
                         buttonText={"Challenge Mode -->"}
                         description={`${pairsNumber} pairs • 1 min timer`}
