@@ -4,14 +4,15 @@ import {useSelector} from "react-redux";
 import {FinishedGame} from "@/components/FinishedGame";
 import {NotStarted} from "@/components/NotStarted";
 import {Timer} from "@/components/Timer";
+import {GameOver} from "@/components/GameOver";
 
 export const Body = () => {
-    const {isStarted, characters, isFinished, isPreview, timer} = useSelector(state => state.game);
+    const {isStarted, characters, isFinished, isPreview, timer, isGameOver} = useSelector(state => state.game);
 
     return (
         <>
             {
-                (timer > 0 && !isPreview && !isFinished) &&
+                (timer > 0 && !isPreview && !isFinished && !isGameOver) &&
                 <div className={"pb-2"}>
                     <Timer/>
                 </div>
@@ -22,8 +23,10 @@ export const Body = () => {
                         <NotStarted/>
                         : isFinished === true ?
                             <FinishedGame/>
-                            :
-                            <CardsContainer characters={characters} isPreview={isPreview}/>
+                            : isGameOver ?
+                                <GameOver/>
+                                :
+                                <CardsContainer characters={characters} isPreview={isPreview}/>
                 }
             </section>
         </>

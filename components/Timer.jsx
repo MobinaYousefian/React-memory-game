@@ -1,7 +1,7 @@
 "use client"
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-import {endGame} from "@/redux/features/gameSlice";
+import {setIsGameOver} from "@/redux/features/gameSlice";
 
 export const Timer = () => {
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ export const Timer = () => {
             setTimeRemaining((prev) => {
                 if (prev === 0) {
                     clearInterval(interval);
-                    dispatch(endGame());
+                    dispatch(setIsGameOver());
                     return 0;
                 } else {
                     return prev - 1

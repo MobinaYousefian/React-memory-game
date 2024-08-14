@@ -11,6 +11,7 @@ export const gameSlice = createSlice({
         isFlipped : false,
         foundPairs : {},
         isFinished : false,
+        isGameOver : false,
     },
     reducers : {
         setTimer : (state, action) => {
@@ -29,6 +30,7 @@ export const gameSlice = createSlice({
             state.foundPairs = {};
             state.isFinished = false;
             state.timer = 0;
+            state.isGameOver = false;
         },
 
         setIsPreview : (state, action) => {
@@ -53,9 +55,13 @@ export const gameSlice = createSlice({
 
         setIsFinished : (state) => {
             state.isFinished = true;
+        },
+
+        setIsGameOver : (state) => {
+            state.isGameOver = true;
         }
     }
 });
 
-export const {setTimer, endGame, startGame, setIsPreview,setCharacters, setOpenCards, clearOpenCards, setFoundPairs, setIsFinished} = gameSlice.actions;
+export const {setIsGameOver ,setTimer, endGame, startGame, setIsPreview,setCharacters, setOpenCards, clearOpenCards, setFoundPairs, setIsFinished} = gameSlice.actions;
 export const gameReducer = gameSlice.reducer;
