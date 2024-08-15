@@ -15,7 +15,7 @@ This game has the following features:
 - **Shuffle function for cards** to have different array set before each start
 
 
-## Technologies used
+## Libraries used
 
 - `Tailwind CSS` for styles -some styles are still in pure css-
 - `Redux Toolkit` for state management
