@@ -23,4 +23,4 @@ This game has the following features:
 - `react device detect` for mobile conditional rendering
 
 ### My contact info
-[Email](mailto:mobina.yousefian.203@gmail.com) - [LinkedIn](https://linkedin.com/in/mobina-yousefian) - [Telegram](https://t.me/Mysf_0)
+[Email](mailto:mobina.yousefian.203@gmail.com) - [LinkedIn](https://linkedin.com/in/mobina-yousefian)
