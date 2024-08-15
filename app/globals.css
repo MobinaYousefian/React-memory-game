@@ -13,15 +13,9 @@
     }
 }
 
-.background-color-gradiant {
-    background: linear-gradient(to bottom right, rgba(243, 119, 45, 0.78), rgba(252, 87, 18, 0.68));
-    color: #dedede;
-}
-
 .GameInstructions {
     transform: translate3d(2rem, 0px, 0px);
 }
-
 
 .cardsContainer {
     perspective: 1000px;
