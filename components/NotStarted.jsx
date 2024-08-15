@@ -32,12 +32,14 @@ export const NotStarted = () => {
     const mobileCharacters = characters.slice(0, 12);
 
     let pairsNumber = "18";
+    let minute = "2 minutes"
     let timer = 120;
 
     if (isMobileOnly) {
         charactersList = mobileCharacters.concat(mobileCharacters);
         timer = 60;
         pairsNumber = "12";
+        minute = "1 minute";
     }
 
 
@@ -86,7 +88,7 @@ export const NotStarted = () => {
                 <div className={"py-2 px-3"}>
                     <GeneralBtn
                         buttonText={"Challenge Mode -->"}
-                        description={`${pairsNumber} pairs • 1 min timer`}
+                        description={`${pairsNumber} pairs • ${minute} timer`}
                         fn={handleStartChallenge}
                         customCss={"text-white bg-[#CE410AAF]"}
                         hoverActive={"hover:bg-[#C2410CD3] active:bg-[#F3772DC6]"}
