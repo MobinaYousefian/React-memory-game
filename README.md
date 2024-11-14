@@ -3,13 +3,7 @@
 This project is a simple memory game developed by `React` and `Next.js`. Feel free to play it at [Demo Link](https://memory-game-naruto.vercel.app/)
 &nbsp;
 
-## Screenshots
 ![Screenshot 2024-11-15 010139](https://github.com/user-attachments/assets/826e4cc0-3f51-4ab5-a7b2-6f7025d10d1f)
-
-![Screenshot 2024-11-15 010152](https://github.com/user-attachments/assets/b546ca85-1ec6-4264-991f-d14fa761d362)
-
-![Screenshot 2024-11-15 010211](https://github.com/user-attachments/assets/769fe662-5bf3-4db4-86af-21ee9f39f21a)
-
 
 ## Overview
 
@@ -24,6 +18,7 @@ This game has the following features:
 
 - One **reusable component** for buttons in entire project
 - **Shuffle function for cards** to have different array set before each start
+&nbsp;
 
 
 ## Libraries used
@@ -32,6 +27,18 @@ This game has the following features:
 - `Redux Toolkit` for state management
 - `clsx` for class names conditional rendering
 - `react device detect` for mobile conditional rendering
+
+
+## More Screenshots
+
+![Screenshot 2024-11-15 010152](https://github.com/user-attachments/assets/b546ca85-1ec6-4264-991f-d14fa761d362)
+
+![Screenshot 2024-11-15 010211](https://github.com/user-attachments/assets/769fe662-5bf3-4db4-86af-21ee9f39f21a)
+
+mobile view ⬇
+
+![photo_2024-11-15_01-22-06](https://github.com/user-attachments/assets/934a2651-21b7-49b4-b112-9e7c3f7f316b)
+
 
 ### My contact info
 [Email](mailto:mobina.yousefian.203@gmail.com) - [LinkedIn](https://linkedin.com/in/mobina-yousefian)
